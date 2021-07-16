@@ -1,0 +1,45 @@
+@media screen and (min-width: 1025px) {
+  img.play {
+    height: 10%;
+  }
+
+  svg.track-outline,
+  svg.moving-outline {
+    height: 40%;
+  }
+
+  h3.time-display {
+    font-size: 4em;
+  }
+
+  .time-select button,
+  .sound button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.5s ease;
+  }
+  div.time-select,
+  div.sound,
+  div.timer {
+    height: 80%;
+  }
+
+  .time-select button:hover {
+    color: black;
+    background: white;
+  }
+
+  .sound button {
+    border: none;
+    height: 17%;
+    width: 20%;
+    border-radius: 50%;
+    padding: 2em;
+  }
+}

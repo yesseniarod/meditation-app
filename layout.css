@@ -1,0 +1,14 @@
+@media screen and (min-width: 1025px) {
+  img.play {
+    height: 10%;
+  }
+
+  svg.track-outline,
+  svg.moving-outline {
+    height: 40%;
+  }
+
+  h3.time-display {
+    font-size: 4em;
+  }
+}

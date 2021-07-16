@@ -28,20 +28,28 @@
 
 .timer svg {
   position: absolute;
+  height: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 
-.time-select {
-  background-color: lightblue;
-}
-
-.sound {
-  background-color: lightgreen;
-}
-
-.timer {
-  background-color: lightcoral;
+.time-display {
+  position: absolute;
+  bottom: 10%;
+  color: white;
+  font-size: 3em;
 }
 
 .video-container {
-  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -1;
+}
+
+.play {
+  height: 10%;
 }

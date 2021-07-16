@@ -14,7 +14,7 @@
 .time-select,
 .sound,
 .timer {
-  height: 80%;
+  height: 70%;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -52,4 +52,24 @@
 
 .play {
   height: 10%;
+}
+
+.time-select button,
+.sound button {
+    color: white;
+    width: 65%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+.time-select button:active {
+	transform: scale(1.1);
+	transition: 0.1s;
+  color: black;
+  background: white;
 }

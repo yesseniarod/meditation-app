@@ -11,4 +11,27 @@
   h3.time-display {
     font-size: 4em;
   }
+
+  .time-select button,
+  .sound button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.5s ease;
+  }
+  div.time-select,
+  div.sound,
+  div.timer {
+    height: 80%;
+  }
+
+  .time-select button:hover {
+    color: black;
+    background: white;
+  }
 }

@@ -60,7 +60,7 @@
     width: 65%;
     height: 10%;
     background: none;
-    border: 2px solid white;
+    border: 1px solid white;
     cursor: pointer;
     border-radius: 5px;
     font-size: 1em;
@@ -73,3 +73,25 @@
   color: black;
   background: white;
 }
+
+.sound button {
+  border: none;
+  height: 15%;
+  width: 50%;
+  border-radius: 50%;
+  padding: 1em;
+}
+
+.sound button:nth-child(1) {
+    background: #4972a1;
+  }
+
+  .sound button:nth-child(2) {
+    background: #a14f49;
+  }
+
+  img.beach,
+  img.rain {
+    width: 100%;
+    height: 100%;
+  }

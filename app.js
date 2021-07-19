@@ -32,9 +32,11 @@ function playSong () {
 function checkPlaying () {
   if ($song.paused) {
     $song.play();
+    $video.play();
     $play.src = './meditation-app/svg/pause.svg';
   } else {
     $song.pause();
+    $video.pause();
     $play.src = './meditation-app/svg/play.svg';
   }
 }

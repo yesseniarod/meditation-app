@@ -25,9 +25,20 @@ function timeElapsed () {
 
 function playSong () {
   $play.addEventListener('click', () => {
-    $song.play();
+    checkPlaying();
   });
 }
 
-timeElapsed();
+function checkPlaying () {
+  if ($song.paused) {
+    $song.play();
+    $play.src = './meditation-app/svg/pause.svg';
+  } else {
+    $song.pause();
+    $play.src = './meditation-app/svg/play.svg';
+  }
+}
+
+
 playSong();
+timeElapsed();

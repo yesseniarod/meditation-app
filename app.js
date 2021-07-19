@@ -7,25 +7,20 @@ var $video = document.querySelector('.video-container video');
 var $outline = document.querySelector('.moving-outline circle');
 var $sound = document.querySelectorAll('.sound button');
 
-
-  $timeSelect.forEach(option => {
-    option.addEventListener('click', function () {
-      const selected = this.getAttribute('data-time');
-      $timeDisplay.textContent = Math.floor(selected / 60) + ':00';
-    });
-  });
+let duration = 600;
 
 $song.ontimeupdate = function timeElapsed () {
   const outlineLength = $outline.getTotalLength();
-  const fakeDuration = 600;
   const currentTime = $song.currentTime;
-  const elapsed = fakeDuration - currentTime;
+  const elapsed = duration - currentTime;
   const seconds = Math.floor(elapsed % 60);
   const minutes = Math.floor(elapsed / 60);
 
-  let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
+  let progress = outlineLength - (currentTime / duration) * outlineLength;
   $outline.style.strokeDasharray = outlineLength;
   $outline.style.strokeDashoffset = progress;
+
+  $timeDisplay.textContent = `${minutes}:${seconds}`;
 }
 
 function playSong () {
@@ -33,6 +28,13 @@ function playSong () {
     checkPlaying();
   });
 }
+
+$timeSelect.forEach(option => {
+  option.addEventListener('click', function () {
+   duration = this.getAttribute('data-time');
+    $timeDisplay.textContent = Math.floor(duration / 60) + ':00';
+  });
+});
 
 function checkPlaying () {
   if ($song.paused) {

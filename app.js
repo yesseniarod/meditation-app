@@ -15,12 +15,17 @@ var $sound = document.querySelectorAll('.sound button');
     });
   });
 
-function timeElapsed () {
+$song.ontimeupdate = function timeElapsed () {
   const outlineLength = $outline.getTotalLength();
   const fakeDuration = 600;
+  const currentTime = $song.currentTime;
+  const elapsed = fakeDuration - currentTime;
+  const seconds = Math.floor(elapsed % 60);
+  const minutes = Math.floor(elapsed / 60);
 
+  let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
   $outline.style.strokeDasharray = outlineLength;
-  $outline.style.strokeDashoffset = fakeDuration;
+  $outline.style.strokeDashoffset = progress;
 }
 
 function playSong () {
@@ -43,4 +48,4 @@ function checkPlaying () {
 
 
 playSong();
-timeElapsed();
+// timeElapsed();

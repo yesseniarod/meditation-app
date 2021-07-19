@@ -23,4 +23,11 @@ function timeElapsed () {
   $outline.style.strokeDashoffset = fakeDuration;
 }
 
+function playSong () {
+  $play.addEventListener('click', () => {
+    $song.play();
+  });
+}
+
 timeElapsed();
+playSong();

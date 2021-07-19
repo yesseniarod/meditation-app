@@ -5,6 +5,7 @@ var $play = document.querySelector('.play');
 var $song = document.querySelector('.song');
 var $video = document.querySelector('.video-container video');
 var $outline = document.querySelector('.moving-outline cirlcle');
+var $sound = document.querySelectorAll('.sound button');
 
 
 $timeSelect.forEach(option => {

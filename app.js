@@ -21,6 +21,13 @@ $song.ontimeupdate = function timeElapsed () {
   $outline.style.strokeDashoffset = progress;
 
   $timeDisplay.textContent = `${minutes}:${seconds}`;
+
+  if (currentTime >= duration) {
+    $song.pause();
+    $song.currentTime = 0;
+    $play.src = './meditation-app/svg/play.svg';
+    $video.pause();
+  }
 }
 
 function playSong () {
@@ -32,7 +39,7 @@ function playSong () {
 $timeSelect.forEach(option => {
   option.addEventListener('click', function () {
    duration = this.getAttribute('data-time');
-    $timeDisplay.textContent = Math.floor(duration / 60) + ':00';
+  $timeDisplay.textContent = Math.floor(duration / 60) + ':00';
   });
 });
 
@@ -50,4 +57,3 @@ function checkPlaying () {
 
 
 playSong();
-// timeElapsed();

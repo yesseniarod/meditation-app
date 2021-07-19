@@ -3,7 +3,8 @@ var $buttonTime = document.querySelectorAll('button[data-time]');
 var $timeDisplay = document.querySelector('.time-display');
 var $play = document.querySelector('.play');
 var $song = document.querySelector('.song');
-var $video = document.querySelector('.video-container');
+var $video = document.querySelector('.video-container video');
+var $outline = document.querySelector('.moving-outline cirlcle');
 
 
 $timeSelect.forEach(option => {

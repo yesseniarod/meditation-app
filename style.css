@@ -42,12 +42,12 @@
   font-size: 3em;
 }
 
-.video-container {
+video {
   position: fixed;
   top: 0%;
   left: 0%;
-  width: 100%;
   z-index: -1;
+  height: 100vh;
 }
 
 .play {

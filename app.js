@@ -30,6 +30,14 @@ $song.ontimeupdate = function timeElapsed () {
   }
 }
 
+$sound.forEach(option => {
+  option.addEventListener('click', function () {
+    $song.src = this.getAttribute('data-sound');
+    $video.src = this.getAttribute('data-video');
+    checkPlaying();
+  });
+});
+
 function playSong () {
   $play.addEventListener('click', () => {
     checkPlaying();

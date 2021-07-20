@@ -22,6 +22,10 @@ $song.ontimeupdate = function timeElapsed () {
 
   $timeDisplay.textContent = `${minutes}:${seconds}`;
 
+  if (seconds < 10) {
+    $timeDisplay.textContent = `0:0${seconds}`;
+  }
+
   if (currentTime >= duration) {
     $song.pause();
     $song.currentTime = 0;

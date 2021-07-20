@@ -38,7 +38,7 @@
 .time-display {
   position: absolute;
   bottom: 10%;
-  color: white;
+  color: black;
   font-size: 3em;
 }
 
@@ -52,6 +52,7 @@ video {
 
 .play {
   height: 10%;
+  position: absolute;
 }
 
 .time-select button,
@@ -59,6 +60,18 @@ video {
     color: white;
     width: 65%;
     height: 10%;
+    background: none;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+button.reset {
+    color: white;
+    width: 65%;
+    height: 6%;
     background: none;
     border: 1px solid white;
     cursor: pointer;
@@ -94,4 +107,9 @@ video {
   img.rain {
     width: 100%;
     height: 100%;
+  }
+
+  button.reset {
+    position: absolute;
+    bottom: 3%;
   }

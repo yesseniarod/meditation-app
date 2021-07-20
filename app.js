@@ -6,6 +6,7 @@ var $song = document.querySelector('.song');
 var $video = document.querySelector('.video-container video');
 var $outline = document.querySelector('.moving-outline circle');
 var $sound = document.querySelectorAll('.sound button');
+var $reset = document.querySelector('.reset');
 
 let duration = 600;
 

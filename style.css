@@ -58,8 +58,8 @@ video {
 .time-select button,
 .sound button {
     color: white;
-    width: 65%;
-    height: 10%;
+    width: 60%;
+    height: 8%;
     background: none;
     border: 1px solid white;
     cursor: pointer;
@@ -90,9 +90,10 @@ button.reset {
 .sound button {
   border: none;
   height: 15%;
-  width: 50%;
+  width: 48%;
   border-radius: 50%;
   padding: 1em;
+  margin-left: 2rem;
 }
 
 .sound button:nth-child(1) {

@@ -11,9 +11,9 @@ var $reset = document.querySelector('.reset');
 let duration = 600;
 
 $song.ontimeupdate = function timeElapsed () {
-  const outlineLength = $outline.getTotalLength();
-  const currentTime = $song.currentTime;
-  const elapsed = duration - currentTime;
+  let outlineLength = $outline.getTotalLength();
+  let currentTime = $song.currentTime;
+  let elapsed = duration - currentTime;
   const seconds = Math.floor(elapsed % 60);
   const minutes = Math.floor(elapsed / 60);
 
@@ -33,6 +33,20 @@ $song.ontimeupdate = function timeElapsed () {
     $play.src = './meditation-app/svg/play.svg';
     $video.pause();
   }
+
+  $reset.addEventListener('click', () => {
+    elapsed = duration;
+    $timeDisplay.textContent =  Math.floor(duration / 60) + ':00';
+    currentTime = 0;
+    // outlineLength = 0;
+    // progress = 100;
+    $outline.style.strokeDashoffset = 0;
+    // console.log('outlineLength:', outlineLength);
+    // console.log('progress:', progress);
+    // console.log('current time:', currentTime);
+    // console.log('elapsed time:', elapsed);
+    // console.log('duration:', duration);
+  });
 }
 
 $sound.forEach(option => {

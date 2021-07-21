@@ -23,7 +23,7 @@ $song.ontimeupdate = function timeElapsed () {
 
   $timeDisplay.textContent = `${minutes}:${seconds}`;
 
-  if (seconds < 10) {
+  if (seconds < 10 && currentTime !== 0) {
     $timeDisplay.textContent = `0:0${seconds}`;
   }
 
@@ -34,18 +34,13 @@ $song.ontimeupdate = function timeElapsed () {
     $video.pause();
   }
 
+  if (currentTime === 0) {
+    $timeDisplay.textContent = Math.floor(duration / 60) + ':00';
+  }
+
   $reset.addEventListener('click', () => {
-    elapsed = duration;
-    $timeDisplay.textContent =  Math.floor(duration / 60) + ':00';
-    currentTime = 0;
-    // outlineLength = 0;
-    // progress = 100;
+    $song.currentTime = 0;
     $outline.style.strokeDashoffset = 0;
-    // console.log('outlineLength:', outlineLength);
-    // console.log('progress:', progress);
-    // console.log('current time:', currentTime);
-    // console.log('elapsed time:', elapsed);
-    // console.log('duration:', duration);
   });
 }
 

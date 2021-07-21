@@ -1,6 +1,7 @@
 @media screen and (min-width: 1025px) {
   img.play {
     height: 10%;
+    cursor: pointer;
   }
 
   svg.track-outline,
@@ -24,13 +25,15 @@
     font-size: 1em;
     transition: all 0.5s ease;
   }
+
   div.time-select,
   div.sound,
   div.timer {
     height: 80%;
   }
 
-  .time-select button:hover {
+  .time-select button:hover,
+  button.reset:hover {
     color: black;
     background: white;
   }
@@ -41,5 +44,22 @@
     width: 20%;
     border-radius: 50%;
     padding: 2em;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  button.reset {
+    color: white;
+    width: 30%;
+    height: 6%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: all 0.5s ease;
   }
 }

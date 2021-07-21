@@ -6,13 +6,14 @@ var $song = document.querySelector('.song');
 var $video = document.querySelector('.video-container video');
 var $outline = document.querySelector('.moving-outline circle');
 var $sound = document.querySelectorAll('.sound button');
+var $reset = document.querySelector('.reset');
 
 let duration = 600;
 
 $song.ontimeupdate = function timeElapsed () {
-  const outlineLength = $outline.getTotalLength();
-  const currentTime = $song.currentTime;
-  const elapsed = duration - currentTime;
+  let outlineLength = $outline.getTotalLength();
+  let currentTime = $song.currentTime;
+  let elapsed = duration - currentTime;
   const seconds = Math.floor(elapsed % 60);
   const minutes = Math.floor(elapsed / 60);
 
@@ -22,13 +23,34 @@ $song.ontimeupdate = function timeElapsed () {
 
   $timeDisplay.textContent = `${minutes}:${seconds}`;
 
+  if (seconds < 10 && currentTime !== 0) {
+    $timeDisplay.textContent = `0:0${seconds}`;
+  }
+
   if (currentTime >= duration) {
     $song.pause();
     $song.currentTime = 0;
     $play.src = './meditation-app/svg/play.svg';
     $video.pause();
   }
+
+  if (currentTime === 0) {
+    $timeDisplay.textContent = Math.floor(duration / 60) + ':00';
+  }
+
+  $reset.addEventListener('click', () => {
+    $song.currentTime = 0;
+    $outline.style.strokeDashoffset = 0;
+  });
 }
+
+$sound.forEach(option => {
+  option.addEventListener('click', function () {
+    $song.src = this.getAttribute('data-sound');
+    $video.src = this.getAttribute('data-video');
+    checkPlaying();
+  });
+});
 
 function playSong () {
   $play.addEventListener('click', () => {
